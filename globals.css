@@ -1,0 +1,52 @@
+/* ---------------------------------- */
+/* Tailwind globals                   */
+/* ---------------------------------- */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply h-screen w-screen bg-background text-foreground;
+  }
+}
+
+/* ---------------------------------- */
+/* Font resets                        */
+/* ---------------------------------- */
+:root {
+  font-size: 100%;
+}
+
+select,
+textarea,
+input,
+button {
+  font: inherit;
+}
+
+/* iOS Safari issues */
+body {
+  font: -apple-system-body;
+}
+
+@supports (font: -apple-system-body) and (not (-webkit-touch-callout: default)) {
+  :root {
+    font-size: 100%;
+  }
+}
+
+/* ---------------------------------- */
+/* Text Boxen                         */
+/* ---------------------------------- */
+textarea,
+input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"]) {
+  font: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+}
+
+textarea[required],
+input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"])[required] {
+  border-left-width: 0.3em;
+}
